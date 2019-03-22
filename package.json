@@ -1,0 +1,9 @@
+{
+  "name": "introducing_typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc --watch ts/*.ts --outDir js/"
+  }
+}
