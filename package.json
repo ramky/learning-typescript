@@ -4,6 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "compile": "tsc --watch ts/*.ts --outDir js/"
+    "c": "node_modules/typescript/bin/tsc ts/*.ts --outDir js/; chokidar \"**/*.ts\" -c \"node_modules/typescript/bin/tsc '{path}' --outDir js/\""
+  },
+  "resolutions": {
+    "**/event-stream": "^4.0.1"
+  },
+  "dependencies": {
+    "chokidar-cli": "^1.2.2",
+    "typescript": "^3.3.4000"
   }
 }
