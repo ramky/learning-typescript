@@ -4,12 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "tc": "tsc ts/*.ts --outDir js/; chokidar \"**/*.ts\" -c \"tsc '{path}' --outDir js/\""
+    "tc": "./node_modules/.bin/tsc ts/*.ts --outDir js/; chokidar \"ts/**/*.ts\" -c \"./node_modules/.bin/tsc '{path}' --outDir js/\""
   },
   "resolutions": {
     "**/event-stream": "^4.0.1"
   },
   "dependencies": {
-    "chokidar-cli": "^1.2.2"
+    "chokidar-cli": "^1.2.2",
+    "typescript": "^3.3.4000"
   }
 }
