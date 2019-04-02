@@ -18,14 +18,17 @@ namespace Mappedtypes {
   interface User {
     name: string;
     age: number;
+    address: string;
+    website: string;
   }
 
-  let user: User = { name: "Remo", age: 28};
+  let user: User = { name: "Remo", age: 28, address: "1 Main st. New Canaan, CT", website: "http://remo.com" };
   let keys = getKeys<User>(user);
 
   console.log(keys.name);
   console.log(keys.age);
 
+  // makes all properties optional
   type Partial<T> = {
     [P in keyof T]?: T[P];
   };
@@ -34,6 +37,7 @@ namespace Mappedtypes {
     readonly [P in keyof T]: T[P];
   };
 
+  // allows to pick specific properties
   type Pick<T, K extends keyof T> = {
     [P in K]: T[P];
   }
@@ -41,4 +45,17 @@ namespace Mappedtypes {
   type Record<K extends string, T> = {
     [P in K]: T;
   }
+
+  let user1: User = { name: "Remo", age: 28, address: "1 Main st. New Canaan, CT", website: "http://remo.com" };
+  user1["name"] = "Something"
+  let user2: Readonly<User> = { name: "Remo", age: 28, address: "1 Main st. New Canaan, CT", website: "http://remo.com" };
+  // user2["name"] = "Something"
+  // cannot assign to name because it is read-only property
+
+  let user3: Partial<User> = { }
+  console.log(JSON.stringify(user3));
+
+  let user4: Partial<User> = { age: 44, address: "1 Main st. New Canaan, CT" }
+  console.log(JSON.stringify(user4));
+
 }
