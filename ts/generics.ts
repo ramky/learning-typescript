@@ -9,6 +9,7 @@ namespace Generics {
   }
 
   let user = deserialize<User>(`{"name": "Remo", "age": 28}`)
+  console.log("user:", user);
 
   interface Rectangle {
     width: number
@@ -16,4 +17,5 @@ namespace Generics {
   }
 
   let rectangle = deserialize<Rectangle>(`{"width": 3, "height": 4}`)
+  console.log("rectangle:", rectangle);
 }
