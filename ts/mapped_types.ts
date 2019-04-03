@@ -25,8 +25,8 @@ namespace Mappedtypes {
   let user: User = { name: "Remo", age: 28, address: "1 Main st. New Canaan, CT", website: "http://remo.com" };
   let keys = getKeys<User>(user);
 
-  console.log(keys.name);
-  console.log(keys.age);
+  console.log("keys.name:", keys.name);
+  console.log("keys.age:", keys.age);
 
   // makes all properties optional
   type Partial<T> = {
@@ -47,15 +47,16 @@ namespace Mappedtypes {
   }
 
   let user1: User = { name: "Remo", age: 28, address: "1 Main st. New Canaan, CT", website: "http://remo.com" };
-  user1["name"] = "Something"
+  user1["name"] = "Gonzalez"
+  console.log("user1:", user1)
+
   let user2: Readonly<User> = { name: "Remo", age: 28, address: "1 Main st. New Canaan, CT", website: "http://remo.com" };
-  // user2["name"] = "Something"
+  // user2["name"] = "Gonzalez"
   // cannot assign to name because it is read-only property
 
   let user3: Partial<User> = { }
-  console.log(JSON.stringify(user3));
+  console.log("user3:", user3)
 
-  let user4: Partial<User> = { age: 44, address: "1 Main st. New Canaan, CT" }
-  console.log(JSON.stringify(user4));
-
+  let user4: Partial<User> = { age: 44, address: "1 Main st. New Canaan, CA" }
+  console.log("user4:", user4)
 }
