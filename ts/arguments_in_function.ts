@@ -16,11 +16,26 @@ function multiply(foo: number, bar?: number, baz: number = 2) {
   return product;
 }
 
-console.log(add(1));
-console.log(add(1, 2));
-console.log(add(1, 2, 3));
+// rest parameters
+function add_with_rest(...foo: number[]){
+  let total = 0
+  for(let num of foo) { total += num }
 
+  return total
+}
+
+console.log("add with optional arguments: ")
+console.log(add(1))
+console.log(add(1, 2))
+console.log(add(1, 2, 3))
+
+console.log("multiply with default arguments: ")
 console.log(multiply(5));
 console.log(multiply(5, 6));
 console.log(multiply(5, 6, 7));
 
+console.log("add with rest parameters: ")
+console.log(add_with_rest(2))
+console.log(add_with_rest(2, 2))
+console.log(add_with_rest(2, 2, 2))
+console.log(add_with_rest(2, 2, 2, 2))
