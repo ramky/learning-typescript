@@ -30,4 +30,3 @@ console.log(multiply(5));
 console.log(multiply(5, 6));
 console.log(multiply(5, 6, 7));
 
-// some comment
