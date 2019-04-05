@@ -29,3 +29,5 @@ console.log(add(1, 2, 3));
 console.log(multiply(5));
 console.log(multiply(5, 6));
 console.log(multiply(5, 6, 7));
+
+// some comment
