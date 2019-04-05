@@ -1,12 +1,8 @@
 // optional arguments
 function add(foo: number, bar?: number, baz?: number) {
   let total = foo
-  if (bar != undefined) {
-    total += bar
-  }
-  if (baz != undefined) {
-    total += baz
-  }
+  if (bar != undefined) { total += bar }
+  if (baz != undefined) { total += baz }
 
   return total;
 }
@@ -14,9 +10,7 @@ function add(foo: number, bar?: number, baz?: number) {
 // default arguments
 function multiply(foo: number, bar?: number, baz: number = 2) {
   let product = foo
-  if (bar!= undefined) {
-    product *= bar
-  }
+  if (bar!= undefined) { product *= bar }
   product *= baz
 
   return product;
